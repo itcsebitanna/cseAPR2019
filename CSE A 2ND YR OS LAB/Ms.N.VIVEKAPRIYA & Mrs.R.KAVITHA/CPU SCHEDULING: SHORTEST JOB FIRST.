@@ -1,19 +1,4 @@
- 
-AIM: To write a C program to implement the CPU scheduling algorithm for shortest job first.
- ALGORITHM:
-Step 1: Get the number of process.
- Step 2: Get the id and service time for each process.
- Step 3: Initially the waiting time of first short process as 0 and total time of first short is         process the service time of that process.  
-Step 4: Calculate the total time and waiting time of remaining process.  
-Step 5: Waiting time of one process is the total time of the previous process.
- Step 6: Total time of process is calculated by adding the waiting time and service time of each process.
-  Step 7: Total waiting time calculated by adding the waiting time of each process.
- Step 8: Total turn around time calculated by adding all total time of each process.
-Step 9: Calculate average waiting time by dividing the total waiting time by total  number of  process.  
-Step 10: Calculate average turn around time by dividing the total waiting time by total number of process.
- Step 11: Display the result.
- PROGRAM CODING:
- #include<stdio.h>
+  #include<stdio.h>
  int main()
 {
  int n,w[100],tot[100],i,j,awt,atot;
@@ -51,16 +36,3 @@ printf("\n\nTotal Waiting Time :%d",awt);
 printf("\n\nAverage Waiting Time :%.2f",avwt);
  printf("\n\nAverage Turnaround Time :%.2f",avtot);
 }
-OUTPUT:    Enter the number of Processes:3
-                    Enter the Burst time for Process1 : 24
-                    Enter the Burst time for Process2 : 5
-                     Enter the Burst time for Process3 : 3
- ProcessId          Waiting time          TurnaroundTime
-    3                              0                                    3
-  2                                3                                   8
- 1                                8                                  32
-Total Waiting Time :11
-  Total Turnaround Time :43   
-Average Waiting Time :3.67   
- Average Turnaround Time :14.33
- RESULT: Thus the program is executed.
