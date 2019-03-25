@@ -70,3 +70,20 @@ j++;
 }
 getch();
 }
+
+Output:
+
+Enter an expression and it is terminated by $
+
+a=(a++)$
+
+*********************Symbol table***********
+symbol   Address    Type         Flag
+********************************************
+a        0A89     Identifier      0
+=        0B56     Operator        0
+(        0985     Symbol          0
+a        0A89     Identifier      1
++        0B94     Operator        0
++        0B94     Operator        1
+)        0923     Symbol          0
