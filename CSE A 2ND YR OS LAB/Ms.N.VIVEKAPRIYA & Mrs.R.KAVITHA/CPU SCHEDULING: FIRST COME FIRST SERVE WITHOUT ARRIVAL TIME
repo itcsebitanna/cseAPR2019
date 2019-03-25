@@ -1,17 +1,3 @@
-AIM: To write a c program to implement the first come first serve without arrival TIME CPU scheduling algorithm  
- ALGORITHM:
-Step 1: Create the number of process.
-Step 2: Get the ID and Service time for each process.  
-Step 3: Initially, Waiting time of first process is zero and Total time for the first process is the starting time of that process.  
-Step 4: Calculate the Total time and Processing time for the remaining processes.
- Step 5: Waiting time of one process is the Total time of the previous process.
-Step 6: Total time of process is calculated by adding Waiting time and Service  time.  
-Step 7: Total waiting time is calculated by adding the waiting time for lack process.
-Step 8: Total turn around time is calculated by adding all total time of each process.
- Step 9: Calculate Average waiting time by dividing the total waiting time by total  number of process.  
-Step 10: Calculate Average turn around time by dividing the total time by the number of process.
- Step 11: Display the result.
- PROGRAM CODING:
 #include<stdio.h>
 int main()
  {
@@ -39,15 +25,4 @@ avg=(float)t/n;
 printf("\n Average TurnaroundTime is %f\n",avg1);
 return(0);
 }
-  OUTPUT:
- Enter number of processes : 3 Enter the burst times :
- 24
- 5 3
-             Gantt chart P1 P2 P3
-             Process                     BurstTime            WaitingTime                 TurnaroundTime
-                      P1                             24                                 0                                    24
-                       P2                           5                                  24                                   29
-                        P3                           3                                29                                      32
- Average WaitingTime is 17.666666
-Average TurnaroundTime is 28.333334  
- RESULT: Thus the program is executed
+ 
