@@ -1,0 +1,102 @@
+Dim cn As New ADODB.Connection
+Dim rc As New ADOB.Recordset
+Private Sub cmdadd_Click()
+clear
+rc.AddNew
+cmdadd.Enabled = False
+End Sub
+Private Sub cmdupdate_Click()
+rc(0) = Txtid.Text
+rc(1) = txtname.Text
+rc(2) = txtage.Text
+rc(3) = txtdes.Text
+rc(4) = txtadd.Text
+rc(5) = txtsal.Text
+rc.Update
+ref
+If cmdadd.Enabled Then
+MsgBox " Record Modified", vbInformation, "Employee details…."
+Else
+cmdadd.Enabled = True
+MsgBox "Record Saved", vbInformation, "Employee details…."
+End If
+End Sub
+Private Sub cmdprevious_Click()
+If Not cmdadd.Enabled Then
+rc.CancelUpdate
+cmdadd.Enabled = True
+End If
+rc.MovePrevious
+If rc.BOF Then rc.MoveFirst
+disp
+End Sub
+Private Sub cmdnext_Click()
+If Not cmdadd.Enabled Then
+rc.CancelUpdate
+cmdadd.Enabled = True
+End If
+rc.MoveNext
+If rc.EOF Then rc.MoveLast
+End Sub
+Private Sub cmdfind_Click()
+If Not cmdadd.Enabled Then
+rc.CancelUpdate
+cmdadd.Enabled = True
+End If
+rc.Requery
+On Error GoTo AD
+FO = InputBox("Enter the Employee ID to Find", "Employee details...")
+If FO = "" Then
+Else
+rc.Find "empid=""&FO&"""
+disp
+Exit Sub
+AD:
+MsgBox "No Record Found", vbCritical, "Medicare Automation"
+End If
+End Sub
+Private Sub cmddelete_Click()
+If Not cmdadd.Enabled Then
+rc.CancelUpdate
+cmdadd.Enabled = True
+End If
+If Not rc.EOF Then
+b = MsgBox("Do you want to delete record", vbInformation + vbYesNo, "Employee details...")
+If b = vbYes Then
+rc.Delete
+MsgBox "Record Deleted", vbInformation, "Employee details..."
+End If
+Else
+MsgBox "No Records to delete", vbCritical, "Employee details..."
+End If
+ref
+End Sub
+Private Sub form_load()
+cn.open "dsn=emp", "cse", "cse"
+rc.open "select * from pritto", cn, adOpenKeyset, adLockOptimistic
+If Not rc.EOF Then
+‘ElseIf rc.EOF Then
+rc.MoveFirst
+disp
+End If
+End Sub
+Private Sub disp()
+txtid.Text = rc(0)
+txtname.Text = rc(1)
+txtage.Text = rc(2)
+txtdes.Text = rc(3)
+textadd.Text = rc(4)
+txtsal.Text = rc(5)
+End Sub
+Private Sub clear()
+Txtid.Text = ""
+txtname.Text = ""
+txtage.Text = ""
+txtdes.Text = ""
+txtadd.Text = ""
+txtsal.Text = ""
+End Sub
+Private Sub ref()
+rc.Close
+rc.open "select * from pritto", cn, adOpenKeyset, adLockOptimistic
+End Sub
