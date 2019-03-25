@@ -1,0 +1,46 @@
+ 
+AIM: To write a C program to implement File Allocation concept using the technique indexed allocation Technique..
+ALGORITHM:
+Step 1: Start the Program
+ Step 2:Obtain the required data through char and int datatypes.
+ Step 3:Enter the filename,index block.
+ Step 4: Print the file name index loop.
+ Step 5:Fill is allocated to the unused index blocks
+Step 6: This is allocated to the unused linked allocation.
+ Step 7: Stop the execution.
+ PROGRAM CODING:
+#include<stdio.h>
+void main()
+{
+char a[10];
+ int i,ib,cib[10];
+ printf("\n enter the file name:");
+scanf("%s",a);
+printf("\n index block:");
+scanf("%d",&ib);
+ for(i=1;i<=5;i++)
+{
+ printf("\n enter the child of index block %d:",i);
+ scanf("%d",&cib[i]);
+}
+ printf("\n the list of files\t index block\n");
+printf("%s\t\t %d",a,ib);
+ printf("\n the above file utiltization index block of child blocks followin\t");
+printf("\n"); for(i=1;i<=5;i++)
+ {
+ printf("%d\t\t",cib[i]);
+}
+printf("\n");
+}
+ RESULT: Thus the program was executed successfully.
+OUTPUT:
+ Enter the name:Testing
+ Index block:19
+ Enter the child of index block 1:9
+ Enter the child of index block 2:16 Enter the child of index block 3:1
+ Enter the child of index block 4:10
+ Enter the child of index block 5:25
+ The list of files index block Testing 19
+ The above file utilization index block of child blocks following:
+ 9 16 1 10 25
+ RESULT: Thus the program was executed successfully.
