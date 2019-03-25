@@ -1,0 +1,27 @@
+AIM:
+       To write a C program to simulate the operation of  “ls” commands in Unix.  
+ALGORITHM :  
+Step 1 : Include the necessary header files.  
+Step 2 : Define the buffer size as 1024.
+Step 3 : Get the file name which has been created already.
+Step 4 : Open the file in read mode.
+Step 5 :.Read the contents of the file and store it in the buffer.
+Step 6 : Print the contents stored in the buffer.
+Step 7 : Close the file.  
+PROGRAM CODING:
+#include<stdio.h>
+#include<dirent.h>
+int main()
+{
+struct dirent **namelist;
+int n,i;
+char pathname[100];
+scanf("%s",&pathname);
+getcwd(pathname);
+n=scandir(pathname,&namelist,0,alphasort);
+if(n<0) printf("Error");
+else
+for(i=0;i<n;i++)
+printf("%s\n",namelist[i]->d_name);
+}  
+RESULT:  Thus the program was executed successfully
