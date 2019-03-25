@@ -1,27 +1,3 @@
-AIM : 
-      To write the program to implement the system calls wait( ) and exit( ).  
-ALGORITHM :
-Step 1 : Declare the variables pid and i as integers.  
-Step 2 : Get the child id value using the system call fork().
-Step 3 : If child id value is less than zero then print “fork failed”.  
-Step 4 : Else if child id value is equal to zero , it is the id value of the child and then start the child process to execute and perform Steps 6 & 7.  
-Step 5 : Else perform Step 8.  
-Step 6 : Use a for loop for almost five child processes to be called.
-Step 7 : After execution of the for loop then print “child process ends”.  
-Step 8 : Execute the system call wait( ) to make the parent to wait for the child process to get over.  
-Step 9 : Once the child processes are terminated , the parent terminates and hence print “Parent process ends”.  
-Step 10 : After both the parent and the chid processes get terminated it execute the wait( ) system call to permanently get deleted from the OS.  
-SYSTEM CALL USED :  
-1. fork ( )
-Used to create new process. The new process consists of a copy of the address space of the original process. The value of process id for the child process is zero, whereas the value of process id for the parent is an integer value greater than zero.
-Syntax:  fork ( )  
-2. wait ( )
-The parent waits for the child process to complete using the wait system call. The wait system call returns the process identifier of a terminated child, so that the parent can tell which of its possibly many children has terminated.  
-Syntax:  wait (NULL)  
-3. exit ( )
-A process terminates when it finishes executing its final statement and asks the operating system to delete it by using the exit system call. At that point, the process may return data (output) to its parent process (via the wait system call).
-Syntax: exit(0)   
-PROGRAM CODING:  
 #include<stdio.h>
 #include<unistd.h>  
 main( )
@@ -49,13 +25,4 @@ printf(“\n Parent process ends”);
 }
 exit(0);
 }  
-OUTPUT:  Child process starts Child
-process 0 is called Child
-process 1 is called Child
-process 2 is called Child
-process 3 is called Child
-process 4 is called Child
-process ends Parent process
-ends  
 
-RESULT: Thus the program was executed and verified successfully
