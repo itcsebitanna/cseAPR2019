@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<conio.h>
+#include<alloc.h>
+#include<ctype.h>
+void main()
+{
+int j=0,i=0,x=0,n,k,l;
+int *p,*add[20];
+int flag;
+char c,b[20],d[20];
+clrscr();
+printf("\n Enter an expression and it is terminated by $");
+while((c=getchar())!='$')
+{
+b[i]=c;
+i++;
+}
+n=i-1;
+i=0;
+printf("Symbol Table \n");
+printf(" \n Symbol\t Address\t type\t flag");
+while(j<=n)
+{
+c=b[j];
+flag=0;
+for(k=0;k<j;k++)
+{
+ if(k!=j && c==b[k] && isalpha(toascii(c)))
+ {
+   flag=1;
+   add[j]=add[k];
+   d[j]=d[k];
+   printf(" \n\t %c \t\t %p \t identifier \t %d",c,add[j],flag);
+   break;
+ }
+}
+ if(isalpha(toascii(c)) && flag==0)
+ {
+  p=malloc(c);
+  add[x]=p;
+  d[x]=c;
+  printf(" \n\t %c \t\t %p \t identifier \t %d",c,p,flag);
+ }
+for(k=0;k<j;k++)
+{
+ if(k!=j && c==b[k] && (c=='+'||c=='-'||c=='*'||c=='/'||c=='='||c==')'|| c=='('))
+ {
+   flag=1;
+   add[j]=add[k];
+   d[j]=d[k];
+   if (c!='(' && c!=')')
+     printf(" \n\t %c \t\t %p \t Operator \t %d",c,add[j],flag);
+   else
+     printf(" \n\t %c \t\t %p \t Symbol \t %d",c,add[j],flag);
+   break;
+ }
+}
+if((c=='+'||c=='-'||c=='*'||c=='/'||c=='='||c==')'||c=='(')&&flag==0)
+{
+p=malloc(c);
+add[x]=p;
+d[x]=c;
+if (c!='(' && c!=')')
+ printf(" \n\t %c \t\t %p \t Operator \t %d",c,p,flag);
+else
+ printf(" \n\t %c \t\t %p \t Symbol \t %d",c,p,flag);
+}
+x++;
+j++;
+}
+getch();
+}

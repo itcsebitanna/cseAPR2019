@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include<conio.h>
+#define MAXNUM 3
+void sum_up(void);
+void main()
+{
+int count;
+printf("\n*****static storage*****\n");
+printf("Key in 3 numbers to be summed ");
+for(count = 0; count < MAXNUM; count++)
+sum_up();
+printf("\n*****COMPLETED*****\n");
+getch();
+}
+void sum_up(void)
+{
+static int sum = 0;
+int num;
+printf("\nEnter a number: ");
+scanf("%d", &num);
+sum += num;
+printf("\nThe current total is: %d location is %p\n", sum,sum);
+}

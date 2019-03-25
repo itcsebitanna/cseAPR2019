@@ -1,0 +1,43 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+struct op
+{
+char l;
+char r[20];
+}op[10],pr[10];
+void main()
+{
+int a,i,j,nlineno=0;
+char *match;
+clrscr();
+printf("enter no of values");
+scanf("%d",&n);
+for(i=0;i<n;i++)
+{
+printf("left\t");
+op[i].l=getche();
+printf("right:\t");
+scanf("%s",op[i].r);
+}
+printf("intermediate Code\n") ;
+for(i=0;i<n;i++)
+{
+printf(“Lineno=%d :”,lineno);
+printf("%c=",op[i].l);
+printf("%s\n",op[i].r);
+lineno++;
+}
+printf(“dataflow analysis for above code”);
+for(i=0;i<n;i++)
+{
+for(i=0;i<n;i++)
+{
+match=strstr(op[j].r,op[i].l);
+if(match)
+{
+printf(“ \n %s live at %s “,op[i].l,op[j].r);
+}
+}}
+getch();
+}
