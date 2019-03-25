@@ -1,0 +1,18 @@
+CREATE SYNONYM MyProduct  
+FOR AdventureWorks2012.Production.Product;  
+GO  
+  
+-- Query the Product table by using the synonym.  
+SELECT ProductID, Name   
+FROM MyProduct  
+WHERE ProductID < 5;  
+GO  
+----------------------- 
+ProductID   Name 
+----------- -------------------------- 
+1           Adjustable Race 
+2           Bearing Ball 
+3           BB Ball Bearing 
+4           Headset Ball Bearings 
+
+(4 row(s) affected)
