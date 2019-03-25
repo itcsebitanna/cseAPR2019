@@ -1,11 +1,3 @@
-AIM: To write a shell program to check whether the number is odd or even.
-ALGORITHM :
- Step 1 : Include the necessary header files.
- Step 2 : get the input
- Step 3 : perform the division by 2.
-Step 4 : print the result.
-Step 5 :stop the execution.
- PROGRAM CODING:
 #!/bin/bash
 num="1 2 3 4 5 6 7 8"
 for   n   in   $num
@@ -17,13 +9,3 @@ continue
 fi
 echo   "odd no"
 done
-OUTPUT:
-  odd no
- even no
- odd no
- even no
- odd no
-even no
- odd no
-even no
-RESULT: Thus the program was executed successfully
