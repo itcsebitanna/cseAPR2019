@@ -38,3 +38,13 @@ int yywrap()
 {
 return 1;
 }
+
+Output:
+
+#include<stdio.h>
+
+# is a Preprocessor directive
+include is a keyword
+< is a relational operator
+stdio.h is a header file
+> is a relational operator
