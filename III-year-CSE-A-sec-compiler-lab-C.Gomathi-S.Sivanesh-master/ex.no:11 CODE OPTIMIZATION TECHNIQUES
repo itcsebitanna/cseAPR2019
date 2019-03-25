@@ -98,3 +98,30 @@ printf("%s\n",pr[i].r);
 }
 getch();
 }
+
+
+output:
+
+Enter no.of values: 3
+left: A  Right: 8
+left: B  Right: C+D
+left: E  Right: C+D
+
+intermediate code:
+A=8
+B=C+D
+E=C+D
+
+after dead code elmination
+B=C+D
+E=C+D
+
+eliminate common expression
+
+B=C+D
+B=C+D
+
+optimized code
+
+B=C+D
+
