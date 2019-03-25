@@ -95,3 +95,16 @@ strcpy(preg[reg].var,var[vc-3]);
 getch();
 }
 }
+
+
+Output:
+
+Enter the Three address code:
+a=b+c
+exit
+
+The equivalent Assembly code is:
+
+ MOV R0,b
+ ADD c,R0
+ MOV a,R0
