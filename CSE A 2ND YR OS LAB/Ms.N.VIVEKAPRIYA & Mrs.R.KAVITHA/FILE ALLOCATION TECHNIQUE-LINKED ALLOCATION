@@ -1,0 +1,35 @@
+AIM: To write a C program to implement File Allocation concept using the technique Linked List Technique..
+ALGORITHM:
+Step 1: Start the Program
+ Step 2:Obtain the required data through char and int datatypes.
+Step 3:Enter the filename,starting block ending block.
+Step 4: Print the free block using loop.  
+Step 5:‟for‟ loop is created to print the file utilization of linked type of entered type .
+ Step 6: This is allocated to the unused linked allocation.
+ Step 7: Stop the execution.
+ PROGRAM CODING :
+#include<stdio.h>
+void main()
+ {
+char a[10]; int i,sb,eb,fb1[10];
+printf("\n enter the file name:");
+scanf("%s",a);
+printf("\n Enter the starting block:");
+scanf("%d",&sb);
+printf("Enter the ending Block:");
+ scanf("%d",&eb);
+for(i=0;i<5;i++)
+{
+ printf("Enter the free block %d",i+1);
+scanf("%d",&fb1[i]);
+ }
+printf("\n File name \t Starting block \t Ending block \n");
+printf("%s \t\t %d\t\t %d",a,sb,eb);
+printf("\n %s File Utilization of Linked type of following blocks:",a);
+printf("\n %d->",sb); for(i=0;i<5;i++)
+{ printf("%d->",fb1[i]);
+ }
+printf("%d\n",eb);
+}
+ 
+RESULT: Thus the program was executed successfully.
