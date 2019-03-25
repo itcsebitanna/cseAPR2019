@@ -243,3 +243,17 @@ goto L2
 L5 : return m
 m <- m+10
 s <- s -10
+
+Output:
+
+************Control Flow************
+
+  block 0 --> block 1
+  block 2 --> block 3
+  block 3 --> NULL
+  block 4 --> block 5
+  block 6 --> NULL
+  block 7 --> block 8
+  block 9 --> NULL
+  block 10 -->NULL
+  
