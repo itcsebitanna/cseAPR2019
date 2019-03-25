@@ -41,3 +41,15 @@ printf(“ \n %s live at %s “,op[i].l,op[j].r);
 }}
 getch();
 }
+
+Output:
+
+Enter no of values: 2
+
+a=b
+b=a+c
+
+******************Data Flow Analysis*****************
+a is live at b=a+c
+b is live at a=b
+c is live at b=a+c
