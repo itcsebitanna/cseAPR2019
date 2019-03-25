@@ -48,3 +48,9 @@ int yyerror(char *s)
 printf("\nExpression is invalid");
 exit(0);
 }
+
+
+Output:
+
+Enter the expression: a+b-c
+ Expression is valid
