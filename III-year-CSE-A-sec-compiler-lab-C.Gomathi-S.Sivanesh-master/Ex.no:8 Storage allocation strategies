@@ -21,3 +21,15 @@ scanf("%d", &num);
 sum += num;
 printf("\nThe current total is: %d location is %p\n", sum,sum);
 }
+
+Output:
+
+*************STATIC storage************
+key in 3 numbers to be summed
+enter a number : 1
+the current total is : 1 location is 00AA
+enter a number : 2
+the current total is : 3 location is 00AA
+enter a number : 3
+the current total is : 6 location is 00AA
+*******COMPLETED***********************
