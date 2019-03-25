@@ -52,3 +52,8 @@ exp : NUMBER
 | '-' exp %prec UMINUS {$$=-$2;}
 ;
 %%
+
+Output:
+Enter the expression => 10+7
+
+Answer = 17.0000000n
