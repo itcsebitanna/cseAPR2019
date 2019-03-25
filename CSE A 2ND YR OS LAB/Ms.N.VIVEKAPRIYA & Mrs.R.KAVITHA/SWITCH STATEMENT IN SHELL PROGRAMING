@@ -1,0 +1,34 @@
+AIM: To write a shell program to add a two number using function .
+ ALGORITHM :
+Step 1 : Include the necessary header files.  
+Step 2 : Define the buffer size as 1024.
+Step 3 : Get the file name which has been created already.
+Step 4 : Open the file in read mode.
+ Step 5 :.Read the contents of the file and store it in the buffer.
+ Step 6 : Print the contents stored in the buffer.
+ Step 7 : Close the file.
+ PROGRAM CODING
+ #!/bin/bash
+ch='y'
+ while   [   $ch   =   'y ' ]
+do
+ echo   "enter your choice"
+echo   "1  no of user loged on"
+echo   "2  print calender"
+echo   "3  print date"
+read   d  
+case  $d   in
+1)   who   |   wc   -l;;
+2)   cal   20;;
+ 3)   date;; *)  
+ break;;
+esac echo   "do you wish to continue (y/n)"
+read   ch
+OUTPUT:
+ enter your choice 1
+no of user loged on 2
+ print calender 3
+print date
+Thu Apr  4 11:18:20 IST 2013
+do you wish to continue (y/n) n
+RESULT:  Thus the program was executed successfully
