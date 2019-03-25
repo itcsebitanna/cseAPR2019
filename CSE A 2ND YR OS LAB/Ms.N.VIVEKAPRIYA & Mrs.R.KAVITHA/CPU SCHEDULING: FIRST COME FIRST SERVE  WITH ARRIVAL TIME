@@ -1,0 +1,64 @@
+AIM: To write a C program to implement the array representation of the CPU scheduling algorithm first come first serve using arrival time.
+ ALGORITHM:
+Step 1: Create the number of process.  
+Step 2: Get the ID and Service time for each process.  
+Step 3: Initially, Waiting time of first process is zero and Total time for the first process is the starting time of that process.  
+Step 4: Calculate the Total time and Processing time for the remaining processes.
+Step 5: Waiting time of one process is the Total time of the previous process.
+ Step 6: Total time of process is calculated by adding Waiting time and Service  time.
+ Step 7: Total waiting time is calculated by adding the waiting time for lack process.
+Step 8: Total turn around time is calculated by adding all total time of each process.
+ Step 9: Calculate Average waiting time by dividing the total waiting time by total  number of process.  
+Step 10: Calculate Average turn around time by dividing the total time by the number of process.
+ Step 11: Display the result.
+ PROGRAM CODING:
+ #include<stdio.h>
+ struct process {
+      char name[5];
+ int at, bt, wt, tt;
+ }
+ int main( )
+ {
+ int i, j, n, t;
+ float awt=0, att=0;
+struct process p[10], temp;
+ printf(“\n Enter the number of process: ”);
+scanf(“%d”, &n);
+for(i=0; i<=n; i++)
+ {
+ printf(“\n Enter the name, arrival time and burst time of process %d:”, i+1);
+scanf(“%s %d %d”, &p[i].name, &p[i].at, &p[i].bt);
+ }
+ for(i=0; i<n-1; i++)
+for(j=0; j<n-1; j++) if(p[j].at>p[j+1].at)
+{
+ temp=p[j]; p[j]=p[j+1];
+ p[j+1=temp;
+ }
+p[0].wt=0;
+t=p[0].tt=p[0].bt; att+=p[0].bt;
+ for(i=1;i<n;i++)
+ {
+ p[i].wt=t-p[i].at;
+t+=p[i].bt; p[i].tt=p[i].wt+p[i].bt;
+ awt+=p[i].wt; att+=p[i].tt;
+ }
+ printf(“\n Process Name Arrival time burst time Waiting Time Turnaround Time\n”); for(i0;i<n;i++)
+ printf(“%s \t\t %d \t\t % d \t\t % d \t\t % d \n”, p[i].name, p[i].at, p[i].bt, p[i].wt, p[i].tt); awt/=n;
+att/=n;
+ printf(“\n Average waiting Time : %f”, awt);
+  printf(“\n Average Turnaround Time : %f\n”, att);
+OUTPUT:
+Enter the number the process:3
+Enter the name arrivaltime and bursttime of proceess 1:P1 08
+Enter the name arrivaltime and bursttime of proceess  2:P2 11
+Enter the name arrivaltime and bursttime of proceess 3:P3 23
+
+             Gantt chart P1 P2 P3
+             Process                    Arrivaltime       BurstTime            WaitingTime                 TurnaroundTime
+                      P1                           0                                  8                                0                                  8
+                       P2                           1                                  1                               7                                 8                                   
+                        P3                           2                                  3                             7                               10
+Average waiting time:1
+The turn arount time:13
+RESULT: Thus the program was executed successfully.
