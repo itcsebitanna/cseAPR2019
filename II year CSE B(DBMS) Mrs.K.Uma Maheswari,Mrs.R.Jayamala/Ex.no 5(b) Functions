@@ -1,0 +1,26 @@
+ SQL>create function fnfact(n number)
+return number is
+b number;
+begin
+b:=1;
+for i in 1..n
+loop
+b:=b*i;
+end loop;
+return b;
+end;
+/
+ SQL>Declare
+n number:=&n;
+y number;
+begin
+y:=fnfact(n);
+dbms_output.put_line(y);
+end;
+/
+Function created.
+Enter value for n: 5
+old 2: n number:=&n;
+new 2: n number:=5;
+120
+PL/SQL procedure successfully completed
