@@ -1,0 +1,68 @@
+SQL> create table empa(id number(3),name varchar2(10),income number(4),expence
+number(3),savings number(3));
+Table created.
+SQL> insert into empa values(2,'kumar',2500,150,650);
+1 row created.
+SQL> insert into empa values(3,'venky',5000,900,950);
+1 row created.
+SQL> insert into empa values(4,'anish',9999,999,999);
+1 row created.
+SQL> select * from empa;
+ID NAME INCOME EXPENCE SAVINGS
+---------- ---------- ---------- ---------- ---------------------------------------
+ 2 kumar 2500 150 650
+ 3 venky 5000 900 950
+ 4 anish 9999 999 999
+SQL> CREATE OR REPLACE TRIGGER VIJAY
+ AFTER UPDATE OR INSERT OR DELETE ON EMP
+ FOR EACH ROW
+ BEGIN
+IF UPDATING THEN
+ DBMS_OUTPUT.PUT_LINE('TABLE IS UPDATED');
+ELSIF INSERTING THEN
+DBMS_OUTPUT.PUT_LINE('TABLE IS INSERTED');
+ELSIF DELETING THEN
+DBMS_OUTPUT.PUT_LINE('TABLE IS DELETED');
+END IF;
+END;
+/
+Trigger created.
+SQL> update emp set income =900 where empname='kumar';
+TABLE IS UPDATED
+1 row updated.
+SQL> insert into emp values ( 4,'Chandru',700,250,80);
+TABLE IS INSERTED
+1 row created.
+SQL> DELETE FROM EMP WHERE EMPID = 4;
+TABLE IS DELETED
+1 row deleted.
+SQL> select * from emp;
+ EMPID EMPNAME INCOME EXPENSE SAVINGS
+ --------- --------------- ------------ ------------- -------------
+ 2 vivek 830 150 100
+ 3 kumar 5000 550 50
+ 9 vasanth 987 6554 644
+ SQL> CREATE OR REPLACE TRIGGER VASANTH
+ // tigger before updation
+BEFORE UPDATE OR INSERT OR DELETE ON EMPLOYEE
+FOR EACH ROW
+BEGIN
+IF UPDATING THEN
+DBMS_OUTPUT.PUT_LINE('TABLE IS UPDATED');
+ELSIF INSERTING THEN
+DBMS_OUTPUT.PUT_LINE('TABLE IS INSERTED');
+ELSIF DELETING THEN
+DBMS_OUTPUT.PUT_LINE('TABLE IS DELETED');
+END IF;
+END;
+/
+Trigger created.
+SQL> INSERT INTO EMP VALUES (4,'SANKAR',700,98,564);
+TABLE IS INSERTED
+1 row created.
+SQL> UPDATE EMP SET EMPID = 5 WHERE EMPNAME = 'SANKAR';
+TABLE IS UPDATED
+1 row updated.
+SQL> DELETE EMP WHERE EMPNAME='SANKAR';
+TABLE IS DELETED
+1 row deleted
