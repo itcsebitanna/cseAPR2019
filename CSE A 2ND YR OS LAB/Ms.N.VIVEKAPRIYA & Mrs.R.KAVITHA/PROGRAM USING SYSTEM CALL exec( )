@@ -1,14 +1,3 @@
-AIM :
-      To write the program to implement the system call exec( ).
- ALGORITHM :
-Step 1 : Include the necessary header files.  
-Step 2 : Print execution of exec system call for the date Unix command.  
-Step 3 : Execute the execlp function using the appropriate syntax for the Unix command date.  Step 4 : The system date is displayed.  
-SYSTEM CALL USED :  
-1.execlp( )  
-Used after the fork() system call by one of the two processes to replace the process‟ memory space with a new program. It loads a binary file into memory destroying the memory image of the program containing the execlp system call and starts its execution. The child process overlays its address space with the UNIX command /bin/ls using the execlp system call.  
-Syntax : execlp( )   
-PROGRAM CODING: 
 #include<stdio.h>
 #include<unistd.h>
 main( )  
@@ -18,7 +7,3 @@ printf(“displaying the date”);
 execlp( “/bin/date”, “date”, 0);
 }
 
-OUTPUT: 
-Sat Dec 14 02 : 57 : 38  IST 2010
-
-RESULT: Thus the program was executed and verified successfully  
