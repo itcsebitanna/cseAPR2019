@@ -1,0 +1,67 @@
+ #include<graphics.h>   
+  #include<stdlib.h>    
+void main()
+   {     
+int pages[10],frames[10][10];   
+   int i,j,k,m,pos=0;no_p,no_f,faults=0;
+gd=DETECT,gm,no;
+int    x1=20,y1=100;
+    float ratio;  
+   char found,    str[30],ch; clrscr();
+  initgraph(&gd,&gm,"..//bgi");  
+  setbkcolor(BLUE);   
+   puts("Enter no of pages do u have");
+ scanf("%d",&no_p);      
+puts("Enter no of frames do u have");  
+scanf("%d",&no_f);   
+ for(i=0;i<no_f;i++)  
+  for(i=0;i<no_f;i++)
+    for(j=0;j<no_p;j++)   
+ frames[i][j]=0;  
+    for(i=0;i<no_p;i++)
+   {    
+ puts("Enter page num");   
+ scanf("%d",&pages[i]);   
+ clrscr();    
+cleardevice();  
+  x1=20,y1=100;   
+ found='f';   
+ for(j=0;j<no_f;j++)    
+{    
+ if(i!=0) frames[j][i]=frames[j][i-1];     
+  if(frames[j][i]==pages[i])    found='t';
+     }     
+    frames if(found=='f')  
+ {    
+  frames[pos][i]=pages[i];    
+faults++;    
+   if(pos<no_f)    pos++;    
+ else pos=0;  
+   }   
+settextstyle(2,0,6);   
+  for(k=0;k<no_f;k++)    
+  {
+   for(j=0;j<=i;j++)  
+  {  
+  rectangle(x1,y1,x1+40,y1+45);   
+ if(frames[k][j]!=0)  
+  {       
+ if(j==i&&frames[k][j]==pages[i]&&found=='f')
+   JBIET    setcolor(MAGENTA);    
+ else    setcolor(WHITE);    
+itoa(frames[k][j],str,10);  
+  outtextxy(x1+15,y1+15,str);
+    }    
+else    outtextxy(x1+10,y1+10,"");   
+setcolor(WHITE);   
+  x1+=55;   
+  }
+ y1+=45;    x1=20;    
+ }
+   }       
+ printf("page fault ration    %f",(float)faults/(float)no_p); getch();  
+   }
+
+
+
+
