@@ -1,27 +1,7 @@
-AIM: To write a shell program to check whether the number is odd or even.
-ALGORITHM :
-Step 1 : Include the necessary header files.
- Step 2 : get the input
-Step 3 : perform the multiplication .
-Step 4 : print the result.
-Step 5 :stop the execution.
- PROGRAM CODING:
- #!/bin/bash
+#!/bin/bash
 echo   " which table you want"
 read   n
 for((i=1;i<10;i++))
 do
 echo   $i   "*"   $n   "="   `expr   $i   \*   $n`
 done
-OUTPUT:
- which table you want 5
-1 * 5 = 5
- 2 * 5 = 10
-3 * 5 = 15
-4 * 5 = 20
-5 * 5 = 25
-6 * 5 = 30
- 7 * 5 = 35
- 8 * 5 = 40
- 9 * 5 = 45
-RESULT: Thus the program was executed successfully
