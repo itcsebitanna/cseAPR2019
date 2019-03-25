@@ -1,18 +1,4 @@
-AIM: To write a C program to implement the CPU scheduling algorithm for Priority.
-ALGORITHM:
-Step 1: Get the number of process
- Step 2: Get the id and service time for each process.
- Step 3: Initially the waiting time of first short process as 0 and total time of first short is process the service time of that process.
- Step 4: Calculate the total time and waiting time of remaining process.
- Step 5: Waiting time of one process is the total time of the previous process.
- Step 6: Total time of process is calculated by adding the waiting time and service time of each process.
- Step 7: Total waiting time calculated by adding the waiting time of each process.
-Step 8: Total turn around time calculated by adding all total time of each process.
-Step 9: Calculate average waiting time by dividing the total waiting time by total number of process.
-Step 10: Calculate average turn around time by dividing the total waiting time by total number of process.
- Step 11: Display the result.
- PROGRAM CODING:
- #include<stdio.h>
+#include<stdio.h>
 int main() {
  int n,temp=0,w[20],b[20], p[20], t2[20],j,t1,d[20],i, te=0,b1[20],t3=0;
  float t,r; w[1]=0;
@@ -62,20 +48,3 @@ temp+=w[i];
  printf("\nAverage Waiting time : %.2f",t);
 printf("\nAverage Turnaround time : %.2f",r);
  }
-RESULT: Thus the program was executed successfully.
- OUTPUT:
- Enter the no. of processes : 3
-Enter the burst times
- P1 : 24 P2 : 5 P3 : 3
- Enter the priorities
-P1 : 2     
-P2 : 1     
-P3 : 3     
-                Gantt Chart : P2 P1P3   
-ProcessID         Priority                BurstTime           WaitingTime         TurnaroundTime
-P2                             1                                5                           0                                      5
-P1                             2                                24                          5                                    29
-P3                             3                                3                          29                                    32
- Average Waiting Time : 11.33
- Average Turnaround Time : 22.00
- RESULT: Thus the program is executed
