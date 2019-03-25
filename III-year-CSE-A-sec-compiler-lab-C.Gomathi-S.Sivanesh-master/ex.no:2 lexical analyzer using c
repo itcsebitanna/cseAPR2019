@@ -118,12 +118,19 @@ Oper.C:
 \ backslash
 / slash
 
-Input.C:
-#include "stdio.h"
-#include "conio.h"
-void main()
-{
-int a=10,b,c;
-a=b*c;
-getch();
-}
+input.txt:
+
+int a=10;
+
+
+Output:
+
+Enter the File Name : input.txt
+
+Lexical analysis
+
+Line 1:  int     : keyword
+         a       : identifier
+         =       : Operator 
+         10      : Constant
+         ;       : Operator
