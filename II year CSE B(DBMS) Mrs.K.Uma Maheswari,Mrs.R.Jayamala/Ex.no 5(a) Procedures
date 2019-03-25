@@ -1,0 +1,36 @@
+SQL> create table saccount ( accno number(5), name varchar2(20), bal number(10));
+Table created.
+SQL> insert into saccount values ( 1,'mala',20000);
+1 row created.
+SQL> insert into saccount values (2,'kala',30000);
+1 row created.
+SQL> select * from saccount;
+ ACCNO NAME BAL
+--------- -------------------- ---------
+ 1 mala 20000
+ 2 kala 30000
+SQL> set serveroutput on;
+SQL> declare
+ 2 a_bal number(7);
+ 3 a_no varchar2(20);
+ 4 debit number(7):=2000;
+ 5 minamt number(7):=500;
+ 6 begin
+ 7 a_no:=&a_no;
+ 8 select bal into a_bal from saccount where accno= a_no;
+ 9 a_bal:= a_bal-debit;
+10 if (a_bal > minamt) then
+11 update saccount set bal=bal-debit where accno=a_no;
+12 end if;
+13 end;
+14
+15 /
+Enter value for a_no: 1
+old 7: a_no:=&a_no;
+new 7: a_no:=1;
+PL/SQL procedure successfully completed.
+SQL> select * from saccount;
+ ACCNO NAME BAL
+--------- -------------------- ---------
+ 1 mala 18000
+ 2 kala 30000
