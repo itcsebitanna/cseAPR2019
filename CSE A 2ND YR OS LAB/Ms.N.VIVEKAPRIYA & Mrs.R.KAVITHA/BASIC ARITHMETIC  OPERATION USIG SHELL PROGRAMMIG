@@ -1,0 +1,28 @@
+AIM: To write a shell program to solve arithmetic operation.
+ ALGORITHM :
+Step 1 : Include the necessary header files.
+  Step 2 : get the inpu.
+Step3 : perform the arithmetic calculation.
+ Step 4 : print the result.
+Step 5 :stop the exeution.
+ PROGRAM CODING:
+#!/bin/bash echo
+  "enter the a vale"
+ read   a echo   
+"enter b value"
+read   b
+c=`expr   $a   +   $b`
+ echo   "sum:"
+$c c=`expr   $a   -   $b`
+ echo   "sub:"
+$c c=`expr   $a   \*   $b`
+ echo   "mul:"$c c=`expr   $a   /   $b`
+echo   "div:"$c
+OUTPUT:
+ Enter  the a vale 10
+ Enter  b value 50
+sum:60
+sub:-40
+ mul:500
+div:0
+RESULT: Thus the program was executed successfully
