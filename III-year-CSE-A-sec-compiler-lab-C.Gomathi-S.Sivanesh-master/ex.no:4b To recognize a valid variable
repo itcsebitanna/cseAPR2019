@@ -36,3 +36,11 @@ printf("this is not a valid variable\n");
 exit(0);
 }
 
+Output:
+
+var
+valid variable
+
+2b
+invalid variable
+
