@@ -1,0 +1,123 @@
+SQL> CREATE table orders(O_Id number(5),
+Orderno number(5),
+P_Id number(3));
+Table created.
+SQL> DESC orders;
+ Name Null? Type
+ --------------------- -------- -----------
+ O_ID NUMBER(5)
+ ORDERNO NUMBER(5)
+ P_ID NUMBER(3)
+ SQL> INSERT into orders values(&O_Id,&Orderno,&P_Id);
+Enter value for o_id: 1
+Enter value for orderno: 77895
+Enter value for p_id: 3
+old 1: INSERT into orders values(&O_Id,&Orderno,&P_Id)
+new 1: INSERT into orders values(1,77895,3)
+1 row created.
+SQL> INSERT into orders values(&O_Id,&Orderno,&P_Id);
+Enter value for o_id: 2
+Enter value for orderno: 44678
+Enter value for p_id: 3
+old 1: INSERT into orders values(&O_Id,&Orderno,&P_Id)
+new 1: INSERT into orders values(2,44678,3)
+1 row created.
+SQL> INSERT into orders values(&O_Id,&Orderno,&P_Id);
+Enter value for o_id: 3
+Enter value for orderno: 22456
+Enter value for p_id: 1
+old 1: INSERT into orders values(&O_Id,&Orderno,&P_Id)
+new 1: INSERT into orders values(3,22456,1)
+1 row created.
+SQL> INSERT into orders values(&O_Id,&Orderno,&P_Id);
+Enter value for o_id: 4
+Enter value for orderno: 24562
+Enter value for p_id: 1
+old 1: INSERT into orders values(&O_Id,&Orderno,&P_Id)
+new 1: INSERT into orders values(4,24562,1)
+1 row created.
+SQL> INSERT into orders values(&O_Id,&Orderno,&P_Id);
+Enter value for o_id: 5
+Enter value for orderno: 34764
+Enter value for p_id: 15
+old 1: INSERT into orders values(&O_Id,&Orderno,&P_Id)
+new 1: INSERT into orders values(5,34764,15)
+1 row created.
+SQL> SELECT * FROM orders;
+ O_ID ORDERNO P_ID
+ ---------- ---------- ----------
+ 1 77895 3
+ 2 44678 3
+ 3 22456 1
+ 4 24562 1
+ 5 34764 15
+SQL> CREATE table persons(p_Id number(5),
+LASTNAME varchar2(10),
+Firstname varchar2(15), Address varchar2(20),
+city varchar2(10));
+Table created.
+SQL> INSERT into persons values(&p_Id,'&Lastname','&firstname','&Address','&city');
+Enter value for p_id: 1
+Enter value for lastname: Hansen
+Enter value for firstname: Ola
+Enter value for address: Timoteivn 10
+Enter value for city: sadnes
+old 1: INSERT into persons values(&p_Id,'&Lastname','&firstname','&Address','&city')
+new 1: INSERT into persons values(1,'Hansen','Ola','Timoteivn 10','sadnes')
+1 row created.
+SQL> INSERT into persons values(&p_Id,'&Lastname','&firstname','&Address','&city');
+Enter value for p_id: 2
+Enter value for lastname: Svendson
+Enter value for firstname: Tove
+Enter value for address: Borgn 23
+Enter value for city: Sandnes
+old 1: INSERT into persons values(&p_Id,'&Lastname','&firstname','&Address','&city')
+new 1: INSERT into persons values(2,'Svendson','Tove','Borgn 23','Sandnes')
+1 row created.
+SQL> INSERT into persons values(&p_Id,'&Lastname','&firstname','&Address','&city');
+Enter value for p_id: 3
+Enter value for lastname: Pettersen
+Enter value for firstname: Kari
+Enter value for address: Storgt 20
+Enter value for city: Stavanger
+old 1: INSERT into persons values(&p_Id,'&Lastname','&firstname','&Address','&city')
+new 1: INSERT into persons values(3,'Pettersen','Kari','Storgt 20','Stavanger')
+1 row created.
+SQL> SELECT * FROM persons;
+ P_ID LASTNAME FIRSTNAME ADDRESS CITY
+ ---------- ---------- --------------- ------------------- ----------
+ 1 Hansen Ola Timoteivn 10 sandnes
+ 2 Svendson Tove Borgn 23 Sandnes
+ 3 Pettersen Kari Storgt 20 Stavanger
+ //inner join
+ SQL> SELECT persons.lastname,persons.firstname,orders.orderno
+ 2 FROM persons
+ 3 INNER JOIN orders
+ 4 ON persons.p_Id = orders.p_Id
+ 5 ORDER BY persons.lastname;
+LASTNAME FIRSTNAME ORDERNO
+------------------ ------------------ ---------------
+Hansen Ola 22456
+Hansen Ola 24562
+Pettersen Kari 77895
+LASTNAME FIRSTNAME ORDERNO
+------------- --------------- ----------
+Hansen Ola 22456
+Hansen Ola 24562
+Pettersen Kari 77895
+Pettersen Kari 44678
+Svendson Tove 34764
+6 rows selected.
+//right join
+SQL> SELECT persons.lastname,persons.firstname,orders.orderno
+ FROM persons
+ RIGHT OUTER JOIN orders
+ ON persons.p_Id = orders.p_Id
+ ORDER BY persons.lastname;
+Pettersen Kari 44678
+LASTNAME FIRSTNAME ORDERNO
+------------------- ------------------ ---------------
+Hansen Ola 24562
+Hansen Ola 22456
+Pettersen Kari 44678
+Pettersen Kari 77895
