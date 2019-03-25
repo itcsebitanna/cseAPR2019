@@ -48,3 +48,18 @@ break;  }  }
 }
  getch();
 }
+
+Output:
+
+Enter the no of variables: 3
+Enter the variable[0] : a
+Enter the Type[iint-i/float-f] : f  
+Enter the variable[1] : b
+Enter the Type[iint-i/float-f] : f 
+Enter the variable[2] : c
+Enter the Type[iint-i/float-f] : i
+
+Enter the Expression : a=b+c
+
+Identifier c must be float type
+
