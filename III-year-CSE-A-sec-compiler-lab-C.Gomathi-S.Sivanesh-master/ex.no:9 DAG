@@ -76,3 +76,8 @@ for(i=0; i<root->nc; i++)
 display(root->link[i]);
 }
 }                   
+
+
+
+
+
